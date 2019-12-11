@@ -1,16 +1,20 @@
-const songInfo = {
-    name:"song",
-    age:33,
-    gender:"Male",
-    handsome:true,
-    favMovies: ["Along the gods", "LOTR", "Oldbody"], 
-    favFood: [
-        {
-            name:"Kimchi", fatty:false}, 
-        { 
-            name:"Cheese burger", fatty: true
+const title = document.querySelector("#title");
+
+const BASE_COLOR = "rgb(52, 73, 94)";
+const OTHER_COLOR = "#7f8c8d";
+
+function handleClick() {
+    const currentColor =title.style.color;
+    if (currentColor === BASE_COLOR) {
+        title.style.color = OTHER_COLOR;
+    } else {
+        title.style.color = BASE_COLOR;
     }
-]
 }
 
-console.log(songInfo.favFood[0].fatty);
+function init() {
+    title.style.color = BASE_COLOR;
+    title.addEventListener("mouseenter", handleClick);
+}
+
+init();
